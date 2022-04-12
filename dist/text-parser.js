@@ -29,8 +29,6 @@
             endChar = separators[_sep][1];
         }
 
-       
-        
         for (var i = 0; i < str.length; i++) {
             var char = str[i];
             var isStart = char == startChar;
