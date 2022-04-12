@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>text-parser</title>
+
+    <link rel="stylesheet" type="text/css" href="dist/normalize.css">
+    <style>
+        *, *::before, *::after{
+            box-sizing: border-box;
+        }
+        body, html{
+            height: 100%;
+        }
+        body{
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>text-parser</h1>
+    <pre>
+<strong>var keyObject</strong> = {
+    a: "test A",
+    b: "test B",
+    c: "test C",
+    d: "godicheol@gmail.com",
+}
+    </pre>
+
+    <ul>
+        <li>
+            textParser.parse(
+                <strong>Text(String)</strong>,
+                <strong>Separator(String)</strong>
+            ) => return <strong>Array</strong>
+        </li>
+        <li>
+            textParser.join(
+                <strong>Parsed(Array)</strong>,
+                <strong>Key(Object)</strong>
+            ) => return <strong>String</strong>
+        </li>
+    </ul>
+
+    <table>
+        <tr>
+            <th>Separator</th>
+            <th>Text</th>
+        </tr>
+        <tr>
+            <td>
+                <select id="my-separator">
+                    <option value="{}">{ or } or {}</option>
+                    <option value="[]">[ or ] or []</option>
+                    <option value="()">( or ) or ()</option>
+                </select>
+            </td>
+            <td>
+                 <input id="my-input" type="text" placeholder="{a} => test A">
+            </td>
+        </tr>
+    </table>
+    
+
+    <div>
+        <h4>Result</h4>
+        <pre id="my-result"></pre>
+    </div>
+    <script src="dist/text-parser.js"></script>
+    <script>
+        var keyObject = {
+            a: "test A",
+            b: "test B",
+            c: "test C",
+            d: "godicheol@gmail.com",
+        }
+        document.getElementById("my-input").addEventListener("input", function(e) {
+            var arr = textParser.parse(this.value, document.getElementById("my-separator"));
+            console.log(arr);
+
+            var str = textParser.join(arr, keyObject);
+            document.getElementById("my-result").innerHTML = str;
+        }, false);
+    </script>
+</body>
+
+</html>
