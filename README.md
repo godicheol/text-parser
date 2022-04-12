@@ -23,7 +23,7 @@
     }
     var joinedStr = textParser.join(parsedStr, obj);
     // 
-    // abc_d_efg
+    // abcdefg
     // 
 
 ```
