@@ -65,7 +65,7 @@
             d: "godicheol@gmail.com",
         }
         document.getElementById("my-input").addEventListener("input", function(e) {
-            var arr = textParser.parse(this.value, document.getElementById("my-separator"));
+            var arr = textParser.parse(this.value, document.getElementById("my-separator").value);
             console.log(arr);
 
             var str = textParser.join(arr, keyObject);

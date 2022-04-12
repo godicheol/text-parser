@@ -15,7 +15,7 @@
             endChar = "}",
             state = 1; // 1: start 2: end
             
-        if (typeof(seq) !== "undefined") {
+        if (typeof(sep) !== "undefined") {
             var _sep = Object.keys(separators).find(function(el) {
                 return el.indexOf(sep) > -1;
             });
